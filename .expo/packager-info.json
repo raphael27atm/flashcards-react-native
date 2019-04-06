@@ -1,0 +1,10 @@
+{
+  "expoServerPort": 19000,
+  "webpackServerPort": null,
+  "expoServerNgrokUrl": "https://bx-3m7.anonymous.flashcards-react-native.exp.direct",
+  "packagerNgrokUrl": "https://packager.bx-3m7.anonymous.flashcards-react-native.exp.direct",
+  "ngrokPid": 8199,
+  "devToolsPort": 19002,
+  "packagerPort": 19001,
+  "packagerPid": 8179
+}
