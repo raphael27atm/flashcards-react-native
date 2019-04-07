@@ -39,25 +39,25 @@ class AddDeck extends Component {
   }
 
   submit = () => {
-    const deckTitle = this.state.deckName
+    const { deckName } = this.state
 
     const deck = {
-      key: deckTitle,
-      title: deckTitle,
+      key: deckName,
+      title: deckName,
       questions: []
     }
 
     this.props.dispatch(addDeck({
-      [deckTitle]: deck
+      [deckName]: deck
     }))
 
     this.props.navigation.pop()
     this.props.navigation.navigate(
       'DeckDetail',
-      { deckKey: deckTitle }
+      { deckKey: deckName }
     )
 
-    saveDeckTitle(deckTitle)
+    saveDeckTitle(deckName)
   }
 
   render() {

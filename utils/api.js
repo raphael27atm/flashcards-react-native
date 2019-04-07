@@ -20,3 +20,15 @@ function getAllDecks(decks) {
     return JSON.parse(decks)
   }
 }
+
+export function saveDeckTitle(title) {
+  return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify({
+    [title]: { key: title, title: title, questions: [] }
+  }))
+}
+
+export function saveCardToDeck({key, cards}) {
+  return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify({
+    [key]: { questions: cards }
+  }))
+}

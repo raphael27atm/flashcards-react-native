@@ -3,6 +3,9 @@ import { View, TouchableOpacity } from 'react-native'
 
 import DeckList from '../DesckList'
 import AddDeck from '../AddDeck'
+import DeckDetail from '../DeckDetail'
+import AddCard from '../AddCard'
+import Quiz from '../Quiz'
 
 import { Ionicons } from '@expo/vector-icons'
 import { createStackNavigator } from 'react-navigation'
@@ -35,6 +38,34 @@ const MainNavigator = createStackNavigator({
     screen: AddDeck,
     navigationOptions: {
       title: "New Deck",
+      headerTintColor: primaryTextColor,
+      headerStyle: {
+        backgroundColor: primaryColor,
+      },
+    }
+  },
+  DeckDetail: {
+    screen: DeckDetail,
+    navigationOptions: {
+      headerTintColor: primaryTextColor,
+      headerStyle: {
+        backgroundColor: primaryColor,
+      },
+    }
+  },
+  AddCard: {
+    screen: AddCard,
+    navigationOptions: {
+      title: "New Card",
+      headerTintColor: primaryTextColor,
+      headerStyle: {
+        backgroundColor: primaryColor,
+      },
+    }
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
       headerTintColor: primaryTextColor,
       headerStyle: {
         backgroundColor: primaryColor,
