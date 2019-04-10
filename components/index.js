@@ -1,5 +1,0 @@
-import DeckList from './DesckList'
-import AddDeck from './AddDeck'
-import DeckDetail from './DeckDetail'
-import AddCard from './AddCard'
-import Quiz from './Quiz'

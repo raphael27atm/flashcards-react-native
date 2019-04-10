@@ -7,7 +7,13 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { primaryColor, primaryLightColor, primaryDarkColor, primaryTextColor, gray, white } from '../../utils/colors'
+import { 
+  primaryColor, 
+  primaryLightColor,
+  primaryDarkColor, 
+  primaryTextColor, 
+  white,
+} from '../../utils/colors'
 import { connect } from 'react-redux'
 import { saveCardToDeck } from '../../utils/api'
 import { addCardToDeck } from '../../redux/actionCreators'
@@ -58,7 +64,6 @@ class AddCard extends Component {
     return (
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
         <TextInput style={styles.input}
-          underlineColorAndroid={primaryColor}
           selectionColor={primaryLightColor}
           placeholder={"Question"}
           value={question}
@@ -66,7 +71,6 @@ class AddCard extends Component {
             (question) => this.setState({ question })
           } />
         <TextInput style={styles.input}
-          underlineColorAndroid={primaryColor}
           selectionColor={primaryLightColor}
           placeholder={"Answer"}
           value={answer}
@@ -88,12 +92,12 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 300,
-    height: 40,
-    padding: 5,
+    height: 50,
+    padding: 15,
     marginTop: 50,
     borderRadius: 5,
-    borderWidth: 2,
-    borderColor: gray
+    borderWidth: 1,
+    borderColor: primaryTextColor,
   },
   submitBtnText: {
     color: primaryTextColor,
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
   },
   iosSubmitBtn: {
     marginTop: 50,
-    backgroundColor: gray,
+    backgroundColor: primaryColor,
     padding: 10,
     borderRadius: 7,
     height: 45,
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
   },
   AndroidSubmitBtn: {
     marginTop: 50,
-    backgroundColor: gray,
+    backgroundColor: primaryColor,
     padding: 10,
     paddingLeft: 30,
     paddingRight: 30,

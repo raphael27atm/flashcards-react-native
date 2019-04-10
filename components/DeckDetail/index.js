@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { primaryTextColor, white, primaryDarkColor, primaryLightColor } from '../../utils/colors'
+import { primaryTextColor, white, primaryDarkColor, primaryColor } from '../../utils/colors'
 import { connect } from 'react-redux'
 
 function AddCardBtn({ onPress }) {
@@ -19,12 +19,12 @@ function AddCardBtn({ onPress }) {
   )
 }
 
-function StartQuizBtn({ onPress, isDisabled }) {
+function QuizBtn({ onPress, isDisabled }) {
   return (
     <TouchableOpacity
       disabled={isDisabled}
       style={[styles.addBtn,
-      isDisabled ? { backgroundColor: primaryLightColor } : { backgroundColor: primaryDarkColor }]}
+      isDisabled ? { backgroundColor: primaryColor } : { backgroundColor: primaryDarkColor }]}
       onPress={onPress}>
       <Text style={styles.addBtnText}>Start Quiz</Text>
     </TouchableOpacity>
@@ -53,7 +53,7 @@ class DeckDetail extends Component {
               : "question"}
           </Text>
         </View>
-        <StartQuizBtn isDisabled={deck.questions.length <= 0} onPress={() => this.props.navigation.navigate(
+        <QuizBtn isDisabled={deck.questions.length <= 0} onPress={() => this.props.navigation.navigate(
           'Quiz',
           { deckKey: deck.key }
         )} />
@@ -94,16 +94,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   addBtn: {
+    color: primaryTextColor,
     width: 200,
     marginTop: 50,
-    backgroundColor: primaryDarkColor,
+    backgroundColor: primaryColor,
     padding: 10,
     paddingLeft: 30,
     paddingRight: 30,
     height: 45,
-    borderRadius: 10,
+    borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+
   },
   addBtnText: {
     color: primaryTextColor,

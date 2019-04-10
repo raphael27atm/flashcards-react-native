@@ -12,8 +12,7 @@ import {
   primaryLightColor,
   primaryDarkColor, 
   primaryTextColor, 
-  gray, 
-  white 
+  white,
 } from '../../utils/colors'
 import { connect } from 'react-redux'
 import { saveDeckTitle } from '../../utils/api'
@@ -67,7 +66,6 @@ class AddDeck extends Component {
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
         <Text>What's the title of your deck?</Text>
         <TextInput style={styles.input}
-          underlineColorAndroid={primaryColor}
           selectionColor={primaryLightColor}
           placeholder={"Deck Title"}
           value={deckName}
@@ -89,21 +87,21 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 300,
-    height: 40,
-    padding: 5,
+    height: 50,
+    padding: 15,
     marginTop: 50,
     borderRadius: 5,
-    borderWidth: 2,
-    borderColor: gray
+    borderWidth: 1,
+    borderColor: primaryTextColor
   },
   submitBtnText: {
     color: primaryTextColor,
     fontSize: 22,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   iosSubmitBtn: {
     marginTop: 50,
-    backgroundColor: gray,
+    backgroundColor: primaryColor,
     padding: 10,
     borderRadius: 7,
     height: 45,
@@ -112,7 +110,7 @@ const styles = StyleSheet.create({
   },
   AndroidSubmitBtn: {
     marginTop: 50,
-    backgroundColor: gray,
+    backgroundColor: primaryColor,
     padding: 10,
     paddingLeft: 30,
     paddingRight: 30,
