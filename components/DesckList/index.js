@@ -3,7 +3,6 @@ import { View, Text, FlatList, TouchableOpacity, Platform, StyleSheet } from 're
 import { fetchDecks } from '../../utils/api'
 import { connect } from 'react-redux'
 import { receiveDecks } from '../../redux/actionCreators'
-import { isEmpty } from '../../utils/helpers'
 import { AppLoading } from 'expo'
 import { white } from '../../utils/colors'
 
@@ -27,10 +26,6 @@ class DeckList extends Component {
 
     if (ready === false) {
       return <AppLoading />
-    }
-
-    if (isEmpty(decks)) {
-      return (<View style={{ flex: 1 }} />)
     }
 
     return (
