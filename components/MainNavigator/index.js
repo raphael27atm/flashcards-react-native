@@ -9,16 +9,16 @@ import Quiz from '../Quiz'
 
 import { Ionicons } from '@expo/vector-icons'
 import { createStackNavigator } from 'react-navigation'
-import { primaryColor, primaryTextColor } from '../../utils/colors'
+import { primaryLightColor, primaryTextLightColor } from '../../utils/colors'
 
 const MainNavigator = createStackNavigator({
   Home: {
     screen: DeckList,
     navigationOptions: ({ navigation }) => ({
       title: "Flashcards",
-      headerTintColor: primaryTextColor,
+      headerTintColor: primaryTextLightColor,
       headerStyle: {
-        backgroundColor: primaryColor,
+        backgroundColor: primaryLightColor,
       },
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate('AddDeck')}>
@@ -28,7 +28,7 @@ const MainNavigator = createStackNavigator({
             justifyContent: 'center',
             marginRight: 10,
           }}>
-            <Ionicons name='md-add' color={primaryTextColor} size={28} />
+            <Ionicons name='md-add' color={primaryTextLightColor} size={28} />
           </View>
         </TouchableOpacity>
       ),
@@ -38,18 +38,18 @@ const MainNavigator = createStackNavigator({
     screen: AddDeck,
     navigationOptions: {
       title: "New Deck",
-      headerTintColor: primaryTextColor,
+      headerTintColor: primaryTextLightColor,
       headerStyle: {
-        backgroundColor: primaryColor,
+        backgroundColor: primaryLightColor,
       },
     }
   },
   DeckDetail: {
     screen: DeckDetail,
     navigationOptions: {
-      headerTintColor: primaryTextColor,
+      headerTintColor: primaryTextLightColor,
       headerStyle: {
-        backgroundColor: primaryColor,
+        backgroundColor: primaryLightColor,
       },
     }
   },
@@ -57,18 +57,18 @@ const MainNavigator = createStackNavigator({
     screen: AddCard,
     navigationOptions: {
       title: "New Card",
-      headerTintColor: primaryTextColor,
+      headerTintColor: primaryTextLightColor,
       headerStyle: {
-        backgroundColor: primaryColor,
+        backgroundColor: primaryLightColor,
       },
     }
   },
   Quiz: {
     screen: Quiz,
     navigationOptions: {
-      headerTintColor: primaryTextColor,
+      headerTintColor: primaryTextLightColor,
       headerStyle: {
-        backgroundColor: primaryColor,
+        backgroundColor: primaryLightColor,
       },
     }
   },

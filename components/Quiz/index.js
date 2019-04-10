@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { primaryTextColor, white, primaryDarkColor, primaryLightColor } from '../../utils/colors'
+import { 
+  white, 
+  primaryDarkColor, 
+  colorSuccess, 
+  textColorSuccess, 
+  colorDanger, 
+  textColorDanger 
+} from '../../utils/colors'
 import { connect } from 'react-redux'
 import { clearLocalNotification, setLocalNotification } from '../../utils/helpers'
 
@@ -15,26 +21,30 @@ function QuizBtn({ type, onPress }) {
     <TouchableOpacity
       style={[
         styles.quizBtn,
-        type === "Correct" ? { backgroundColor: 'green' } :
-          type === "Incorrect" ? { backgroundColor: 'red' } :
-            {},
+        type === "Correct" ? { backgroundColor: colorSuccess } : { backgroundColor: colorDanger },
+        {},
       ]}
       onPress={onPress}>
-      <Text style={styles.quizBtnText}>{type}</Text>
+      <Text style={[styles.quizBtnText,
+        type === "Correct" ? { color: textColorSuccess } : { color: textColorDanger },
+        {}
+      ]}>
+        {type}
+      </Text>
     </TouchableOpacity>
   )
 }
 
 class Quiz extends Component {
-  restartNotification() {
-    clearLocalNotification()
-      .then(setLocalNotification());
-  }
-
   state = {
     currentQuestion: 0,
     showAnswer: false,
     correctCount: 0
+  }
+
+  restartNotification() {
+    clearLocalNotification()
+      .then(setLocalNotification());
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -151,7 +161,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   quizBtnText: {
-    color: primaryTextColor,
     fontSize: 22,
     textAlign: 'center',
   },
