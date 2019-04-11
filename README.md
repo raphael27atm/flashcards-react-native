@@ -2,6 +2,10 @@
 
 The Flashcards project, allows users to study a collection of flashcards. With the app, users can create different categories of flashcards called "decks", add flashcards to these decks, and make the quizes in these decks. [React Nanodegree Program](https://udacity.com/course/nd019).
 
+## Tested platforms
+
+This app was tested on android devices. It may work on iOS devices also.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
